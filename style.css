@@ -1,13 +1,30 @@
 input {
     /* border: none; */
     width: 18vw;
-    height: 4vh;
+    height: 5vh;
     margin-left: 10%;
+    border: 2px solid #5ca3f5;
+    background-color: rgb(236, 238, 239);
 }
 input:focus {
-    background-color: aquamarine;
+    background-color: rgb(236, 238, 239);
+    border-color: #5ca3f5;
 }
 h1 {
     text-align: center;
     color: rgb(13, 137, 137);
+}
+#clear {
+    /* margin-top: 30vh; */
+    margin: 70vh auto;
+    position: fixed;
+    border: none;
+    background-color: rgb(206, 74, 3);
+    width: 100px;
+    height: 30px;
+    font-weight: bold;
+    font-size: 18px;
+}
+body {
+    cursor: pointer;
 }

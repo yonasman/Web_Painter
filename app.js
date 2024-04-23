@@ -28,16 +28,27 @@ function resize() {
 }
 
 // Function to set the position
+// function setPosition(e) {
+//     if (isNewSession) {
+//         pos.x = e.clientX;
+//         pos.y = e.clientY;
+//         isNewSession = false;
+//     } else {
+//         pos.x = e.clientX;
+//         pos.y = e.clientY;
+//     }
+// }
 function setPosition(e) {
+    // Set the position of the drawing to the current mouse position
+    pos.x = e.clientX;
+    pos.y = e.clientY;
+
+    // Update isNewSession flag if necessary
     if (isNewSession) {
-        pos.x = e.clientX;
-        pos.y = e.clientY;
         isNewSession = false;
-    } else {
-        pos.x = e.clientX;
-        pos.y = e.clientY;
     }
 }
+
 
 // Last known position
 let pos = { x: 0, y: 0 };
@@ -112,3 +123,15 @@ function redrawStoreDrawing() {
 
 // Call redrawStoreDrawing function when window loads
 window.onload = redrawStoreDrawing;
+
+// Clearing the drawing
+let clearButton = document.getElementById("clear");
+clearButton.addEventListener('click', clearDrawing);
+
+// Function to clear drawing
+function clearDrawing() {
+    drawing = []; // Clearing drawing array
+    localStorage.clear(); // Clear the local storage
+    // Clear the canvas
+    cxt.clearRect(0, 0, canvas.width, canvas.height);
+}
