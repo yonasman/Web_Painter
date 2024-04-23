@@ -1,0 +1,13 @@
+input {
+    /* border: none; */
+    width: 18vw;
+    height: 4vh;
+    margin-left: 10%;
+}
+input:focus {
+    background-color: aquamarine;
+}
+h1 {
+    text-align: center;
+    color: rgb(13, 137, 137);
+}
